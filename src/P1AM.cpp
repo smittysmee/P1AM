@@ -1343,6 +1343,7 @@ char *P1AM::loadConfigBuf(int moduleID){
 			return (char*)P1_04ADL_2_DEFAULT_CONFIG;
 		case 0x34608C8E:
 			return (char*)P1_04NTC_DEFAULT_CONFIG;
+		case 0x34608C82:	//P1-04THMS (isolated THM variant) shares the THM channel config
 		case 0x34608C81:
 			return (char*)P1_04THM_DEFAULT_CONFIG;
 		case 0x34605588:

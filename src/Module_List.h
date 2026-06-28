@@ -94,6 +94,7 @@ const struct moduleProps
 	{0x34605590, 0, 0, 16, 0, 12, 2, 12, "P1-04ADL-2"}, //P1-04ADL-2
 
 	{0x34608C81, 0, 0, 16, 0, 12, 20, 32, "P1-04THM"},	//P1-04THM
+	{0x34608C82, 0, 0, 16, 0, 12, 20, 32, "P1-04THMS"},	//P1-04THMS (isolated K-type variant; raw ID read from a physical module, mirrors P1-04THM layout)
 
 	{0x34608C8E, 0, 0, 16, 0, 12, 8, 32, "P1-04NTC"}, 	//P1-04NTC
 
