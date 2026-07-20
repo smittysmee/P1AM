@@ -120,6 +120,10 @@ uint8_t P1AM::init() {
 		baseControllerConstants[5+i*7]  = mdb[dbLoc].configBytes;
 		baseControllerConstants[6+i*7]  = mdb[dbLoc].dataSize;
 	}
+	Serial.println("module ids:");
+	for(uint32_t i=0;i<slots;i++){
+		Serial.println(modules.IDs[i], HEX);
+	}
 
 	spiTimeout(1000*200);
 	delay(1);
@@ -1343,8 +1347,8 @@ char *P1AM::loadConfigBuf(int moduleID){
 			return (char*)P1_04ADL_2_DEFAULT_CONFIG;
 		case 0x34608C8E:
 			return (char*)P1_04NTC_DEFAULT_CONFIG;
-		case 0x34608C82:	//P1-04THMS (isolated THM variant) shares the THM channel config
 		case 0x34608C81:
+		case 0x34608C82:	//P1-04THMS shares the P1-04THM channel config
 			return (char*)P1_04THM_DEFAULT_CONFIG;
 		case 0x34605588:
 			return (char*)P1_04RTD_DEFAULT_CONFIG;
