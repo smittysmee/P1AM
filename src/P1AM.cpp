@@ -120,11 +120,7 @@ uint8_t P1AM::init() {
 		baseControllerConstants[5+i*7]  = mdb[dbLoc].configBytes;
 		baseControllerConstants[6+i*7]  = mdb[dbLoc].dataSize;
 	}
-	Serial.println("module ids:");
-	for(uint32_t i=0;i<slots;i++){
-		Serial.println(modules.IDs[i], HEX);
-	}
-
+	
 	spiTimeout(1000*200);
 	delay(1);
 	spiSendRecvBuf(baseControllerConstants,slots*7);	//Send mdb values to Base Controller
